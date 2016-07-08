@@ -1,8 +1,9 @@
-<html>
-	<head>
-		<title>Add the Bookmarks</title>
-	</head>
-	<body>
+{% extends 'base.html' %}
+{% block title %}
+	Add the Bookmarks
+{% endblock %}
+
+{% block content %}
 		<form method="post" action="">
 			<fieldset>
 				<label>Add: </label>
@@ -11,5 +12,7 @@
 			<button type="submit">Add</button>
 
 		</form>
-	</body>
-</html>
+{% endblock %}
+{% block aside %}
+
+{% endblock %}
