@@ -26,6 +26,17 @@
                 </nav>
             </header>
         </div>
+        <article id="flash">   
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </article>
 
         <div class="main-container">
             <div class="main wrapper clearfix">
