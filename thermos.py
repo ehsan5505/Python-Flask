@@ -16,10 +16,13 @@ def store_bookmark(url):
 		datetime = datetime.utcnow() 
 	))
 
+def new_bookmarks(num):
+	return sorted(bookmarks,key=lambda bm: bm['datetime'],reverse=True)[:num]
+
 @app.route('/')
 @app.route('/index')
 def index():
-	return render_template('index.html')
+	return render_template('index.html',new_bookmarks=new_bookmarks(5))
 
 @app.errorhandler(404)
 def page_not_found(e):
